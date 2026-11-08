@@ -67,17 +67,22 @@ def main():
         g = (42 + 23*depth + light*.95 + 17*stones) * vignette
         bcol = (43 + 23*depth + light*1.10 + 12*stones) * vignette
         rgb = np.uint8(np.clip(np.stack((r,g,bcol), axis=-1), 0, 255))
-        pond = Image.fromarray(rgb, 'RGB').convert('RGBA')
+        # Render above the 512px profile display size. Soften the original
+        # pixel-art sprite before resampling so its hard square pixels don't
+        # dominate the pond; interpolation cannot invent photographic detail.
+        output_size = (768, 768)
+        pond = Image.fromarray(rgb, 'RGB').resize(output_size, Image.Resampling.LANCZOS).convert('RGBA')
+        fish = fish.filter(ImageFilter.GaussianBlur(.6)).resize(output_size, Image.Resampling.LANCZOS)
         # A faint diffuse shadow gives the fish contact with the water.
-        alpha = fish.getchannel('A').filter(ImageFilter.GaussianBlur(7)).point(lambda p: int(p * .23))
+        alpha = fish.getchannel('A').filter(ImageFilter.GaussianBlur(10)).point(lambda p: int(p * .23))
         shadow = Image.new('RGBA', fish.size, (0, 14, 18, 0))
         shadow.putalpha(alpha)
-        pond.alpha_composite(shadow, (4, 7))
+        pond.alpha_composite(shadow, (6, 10))
         pond.alpha_composite(fish)
         frames.append(pond.convert('RGB').quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE))
     DEST.parent.mkdir(parents=True, exist_ok=True)
     frames[0].save(DEST, save_all=True, append_images=frames[1:], duration=durations, loop=0, optimize=False, disposal=2)
-    print(f'Wrote {DEST}: {width}x{height}, {len(frames)} frames, {DEST.stat().st_size} bytes')
+    print(f'Wrote {DEST}: {output_size[0]}x{output_size[1]}, {len(frames)} frames, {DEST.stat().st_size} bytes')
 
 
 if __name__ == '__main__':
