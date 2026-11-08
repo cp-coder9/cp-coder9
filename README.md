@@ -49,6 +49,18 @@ A few stops on the wall. Explore the repositories for the actual code, documenta
 <code>ANDROID</code> <code>PYTHON</code>
 </td>
 </tr>
+<tr>
+<td width="50%">
+<strong><a href="https://github.com/cp-coder9/esp32-ble-tracker">05 / GH0ST-BLE ↗</a></strong><br>
+<sub>BLE scanning toolkit with ESP32 firmware and radar interfaces for authorized testing.</sub><br><br>
+<code>BLE</code> <code>ESP32</code>
+</td>
+<td width="50%">
+<strong><a href="https://github.com/cp-coder9/a777">06 / A777 ↗</a></strong><br>
+<sub>Architex application code for built-environment workflows.</sub><br><br>
+<code>ARCHITECTURE</code> <code>PHP</code>
+</td>
+</tr>
 </table>
 
 <details>
@@ -57,7 +69,7 @@ A few stops on the wall. Explore the repositories for the actual code, documenta
 
 - **[Nebula Scribe](https://github.com/cp-coder9/Nebula-Scribe-)** — voice transcription for noisy environments.
 - **[Wigglefish](https://github.com/cp-coder9/wigglefish)** — a fork of a passive Wi-Fi/BLE field scanner.
-- **[Kiro Gateway](https://github.com/cp-coder9/kiro-gateway)** — a Kiro API proxy gateway.
+- **[Kiro Gateway](https://github.com/cp-coder9/kiro-gateway)** — a Kiro API proxy gateway; its README credits [Jwadow](https://github.com/jwadow).
 - **[All public repositories](https://github.com/cp-coder9?tab=repositories)** — explore the full collection.
 
 </details>
