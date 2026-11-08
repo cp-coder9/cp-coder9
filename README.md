@@ -15,6 +15,4 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-## My GitHub koi
-
-<img src="koi/koi.gif" width="256" alt="A koi animated from my GitHub activity">
+<img src="koi/pond.gif" width="512" alt="A koi swimming in a pond">
