@@ -2,6 +2,7 @@
 """Draw a public GitHub profile signal card, without third-party badge services."""
 import json
 import os
+import random
 from pathlib import Path
 from urllib.request import Request, urlopen
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
@@ -27,22 +28,36 @@ def main():
     with urlopen(Request('https://api.github.com/users/cp-coder9', headers=headers), timeout=30) as response:
         data = json.load(response)
     numbers = [(data['public_repos'], 'PUBLIC REPOS'), (data['followers'], 'FOLLOWERS'), (data['following'], 'FOLLOWING')]
-    w, h = 1200, 260
-    im = Image.new('RGB', (w, h), '#101218')
+    w, h = 1200, 300
+    im = Image.new('RGB', (w, h), '#15171c')
     d = ImageDraw.Draw(im)
-    # A deliberately restrained poster-strip: typography remains legible at mobile width.
-    d.rounded_rectangle((2, 2, w-3, h-3), radius=15, fill='#101218', outline='#3a3b46', width=3)
-    d.polygon([(0, 0), (15, 0), (115, h), (100, h)], fill='#d5ff39')
-    d.line((128, 29, 128, h-29), fill='#ff4778', width=4)
-    d.text((156, 39), 'THE SIGNAL', fill='#f3f3ec', font=font(38, True))
-    d.text((158, 101), 'PUBLIC / GITHUB', fill='#66d7d5', font=font(18))
-    d.text((158, 139), 'PUBLIC COUNTS', fill='#b9bdc6', font=font(17))
-    d.text((158, 166), 'REFRESHED DAILY', fill='#b9bdc6', font=font(17))
-    d.line((440, 40, 440, 220), fill='#3a3b46', width=2)
+    rng = random.Random(9127)
+    # Rough brick, distressed painted layers and ink spatters; deterministic so
+    # an unchanged snapshot does not create a meaningless daily commit.
+    for y in range(0, h, 65):
+        d.line((0, y, w, y), fill='#292a31', width=3)
+        for x in range(-150 + (y // 65 % 2) * 140, w, 280):
+            d.line((x, y, x, y+65), fill='#292a31', width=3)
+    for _ in range(1600):
+        x, y = rng.randrange(w), rng.randrange(h)
+        color = rng.choice(('#202128', '#20232a', '#26272d', '#303038'))
+        d.line((x, y, x + rng.randint(1, 15), y + rng.choice((0, 0, 1))), fill=color, width=1)
+    paints = ('#fc4086', '#baff37', '#37dddf', '#ff9852')
+    for _ in range(280):
+        x, y = rng.randrange(w), rng.randrange(h)
+        radius = rng.choices((1,2,3,5,8,13), (20,16,9,6,3,1))[0]
+        d.ellipse((x-radius, y-radius, x+radius, y+radius), fill=rng.choice(paints))
+    d.polygon([(38,47),(396,25),(390,244),(42,268)], fill='#e42d75', outline='#0c0d10', width=7)
+    d.polygon([(51,60),(370,41),(374,218),(47,245)], fill='#1b2025')
+    d.text((73,61), 'THE', fill='#37dddf', stroke_width=2, stroke_fill='#08090a', font=font(37, True))
+    d.text((69,104), 'SIGNAL', fill='#c2fa3c', stroke_width=3, stroke_fill='#08090a', font=font(59, True))
+    d.text((73,190), 'PUBLIC / DAILY', fill='#f4f0dd', font=font(19, True))
     for i, (value, label) in enumerate(numbers):
-        x = 480 + i * 235
-        d.text((x+3, 52), str(value), fill=('#d5ff39', '#ff648b', '#75e8df')[i], font=font(70, True))
-        d.text((x+3, 163), label, fill='#d6d8de', font=font(16))
+        x = 415 + i * 250
+        color = paints[i]
+        d.polygon([(x+4,60),(x+213,49),(x+221,225),(x,235)], fill='#090b0f', outline=color, width=5)
+        d.text((x+20,65), str(value), fill=color, stroke_width=2, stroke_fill='#050607', font=font(75, True))
+        d.text((x+21,181), label, fill='#f1f0e9', font=font(16, True))
     OUT.parent.mkdir(parents=True, exist_ok=True)
     tmp = OUT.with_suffix('.tmp.png')
     im.save(tmp, format='PNG', optimize=True)

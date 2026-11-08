@@ -1,70 +1,38 @@
 <div align="center">
-  <img src="assets/graffiti-header.png" alt="CP-CODER9 in graffiti lettering on a brick wall" width="100%">
+  <img src="assets/graffiti-header.png" alt="CP-CODER9 graffiti mural" width="100%">
   <br>
-  <strong>BUILD / BREAK / REBUILD</strong>
-  <br>
-  <sub>ARCHITECTURE  •  AI  •  MOBILE  •  SIGNALS</sub>
-  <br><br>
-  <a href="#user-content-the-signal">THE SIGNAL</a> &nbsp; / &nbsp;
-  <a href="#user-content-the-work">THE WORK</a> &nbsp; / &nbsp;
-  <a href="https://github.com/cp-coder9?tab=repositories">ALL REPOS ↗</a>
+  <strong>BUILD / BREAK / REBUILD</strong><br>
+  <sub>ARCHITECTURE • AI • MOBILE • SIGNALS</sub><br><br>
+  <a href="https://github.com/cp-coder9?tab=repositories">EXPLORE ALL REPOSITORIES ↗</a>
 </div>
 
----
-
-## THE SIGNAL
+<br>
 
 <a href="https://github.com/cp-coder9?tab=repositories">
-  <img src="assets/signal.png" alt="Public GitHub repository, follower and following counts, refreshed daily" width="100%">
+  <img src="assets/signal.png" alt="Public repositories, followers and following counts, refreshed daily" width="100%">
 </a>
 
-<sub>Public GitHub counts • refreshed alongside the koi • no tracking pixels</sub>
+<sub>Public GitHub counts • updated daily</sub>
 
-## THE WORK
+<br><br>
 
-A few stops on the wall. Explore the repositories for the actual code, documentation and project status.
+<img src="assets/street/work.png" alt="The work: selected projects" width="100%">
 
-<table>
-<tr>
-<td width="50%">
-<strong><a href="https://github.com/cp-coder9/arc-1">01 / ARC-1 ↗</a></strong><br>
-<sub>Architectural AI compliance marketplace.</sub><br><br>
-<code>ARCHITECTURE</code> <code>AI</code>
-</td>
-<td width="50%">
-<strong><a href="https://github.com/cp-coder9/architex-technology-radar">02 / ARCHITEX RADAR ↗</a></strong><br>
-<sub>A source-backed static technology radar artifact.</sub><br><br>
-<code>BUILT ENVIRONMENT</code> <code>RADAR</code>
-</td>
-</tr>
-<tr>
-<td width="50%">
-<strong><a href="https://github.com/cp-coder9/Reminisce">03 / REMINISCE ↗</a></strong><br>
-<sub>A memory AI app.</sub><br><br>
-<code>AI</code> <code>MEMORY</code>
-</td>
-<td width="50%">
-<strong><a href="https://github.com/cp-coder9/termux-connector">04 / TERMUX CONNECTOR ↗</a></strong><br>
-<sub>An Android app and Python server connecting to Termux over TCP.</sub><br><br>
-<code>ANDROID</code> <code>PYTHON</code>
-</td>
-</tr>
-<tr>
-<td width="50%">
-<strong><a href="https://github.com/cp-coder9/esp32-ble-tracker">05 / GH0ST-BLE ↗</a></strong><br>
-<sub>BLE scanning toolkit with ESP32 firmware and radar interfaces for authorized testing.</sub><br><br>
-<code>BLE</code> <code>ESP32</code>
-</td>
-<td width="50%">
-<strong><a href="https://github.com/cp-coder9/a777">06 / A777 ↗</a></strong><br>
-<sub>Architex application code for built-environment workflows.</sub><br><br>
-<code>ARCHITECTURE</code> <code>PHP</code>
-</td>
-</tr>
-</table>
+<div align="center">
+  <a href="https://github.com/cp-coder9/arc-1"><img src="assets/street/project-arc.png" alt="ARC-1 — architectural AI compliance marketplace" width="49%"></a>
+  <a href="https://github.com/cp-coder9/architex-technology-radar"><img src="assets/street/project-radar.png" alt="Architex Radar — source-backed static technology radar" width="49%"></a>
+  <a href="https://github.com/cp-coder9/Reminisce"><img src="assets/street/project-reminisce.png" alt="Reminisce — memory AI app" width="49%"></a>
+  <a href="https://github.com/cp-coder9/termux-connector"><img src="assets/street/project-termux.png" alt="Termux Connector — Android and Python over TCP" width="49%"></a>
+  <a href="https://github.com/cp-coder9/esp32-ble-tracker"><img src="assets/street/project-ble.png" alt="GH0ST-BLE — BLE and ESP32 toolkit for authorized testing" width="49%"></a>
+  <a href="https://github.com/cp-coder9/a777"><img src="assets/street/project-a777.png" alt="A777 — Architex built-environment application code" width="49%"></a>
+</div>
+
+<br>
+
+<img src="assets/street/extras.png" alt="More from the underground" width="100%">
 
 <details>
-<summary><strong>MORE FROM THE UNDERGROUND &nbsp; ↓</strong></summary>
+<summary><strong>OPEN THE CRATE ↓</strong></summary>
 <br>
 
 - **[Nebula Scribe](https://github.com/cp-coder9/Nebula-Scribe-)** — voice transcription for noisy environments.
@@ -74,12 +42,10 @@ A few stops on the wall. Explore the repositories for the actual code, documenta
 
 </details>
 
----
+<br>
 
 <div align="center">
   <img src="koi/pond.gif" width="512" alt="An animated koi swimming in a pond">
 </div>
 
-<div align="center">
-  <sub>CP-CODER9 &nbsp; / &nbsp; KEEP MAKING THINGS</sub>
-</div>
+<img src="assets/street/footer.png" alt="CP-CODER9 — keep making things" width="100%">
