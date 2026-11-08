@@ -5,8 +5,8 @@
   <br>
   <sub>ARCHITECTURE  •  AI  •  MOBILE  •  SIGNALS</sub>
   <br><br>
-  <a href="#the-signal">THE SIGNAL</a> &nbsp; / &nbsp;
-  <a href="#the-work">THE WORK</a> &nbsp; / &nbsp;
+  <a href="#user-content-the-signal">THE SIGNAL</a> &nbsp; / &nbsp;
+  <a href="#user-content-the-work">THE WORK</a> &nbsp; / &nbsp;
   <a href="https://github.com/cp-coder9?tab=repositories">ALL REPOS ↗</a>
 </div>
 
